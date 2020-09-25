@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R/P/S</title>
+
+</head>
+<body>
+
+
+<script>
+    var wins = 0
+    var losses = 0
+    var ties = 0
+    var computerOptions = ["r","p", "s"]
+    var games = 5
+
+for (var i = 0; i < games; i++){
+
+    var playerChoice = prompt("Choose r, p or s")
+    playerChoice = playerChoice.toLowerCase()
+    var computerNumber = Math.floor(Math.random() * computerOptions.length)
+    var computerChoice = computerOptions[computerNumber]
+
+    if (playerChoice === "r" || playerChoice === "p" || playerChoice === "s") {
+        if (playerChoice === "r" && computerChoice === "s" || playerChoice === "p" && computerChoice === "r" || playerChoice === "s" && computerChoice === "p"){
+            alert("You picked " + playerChoice + " and The Computer picked " + computerChoice + ". You Win!")
+            wins++
+            alert(wins + " Wins!" + ties + " Ties!" + losses + " Losses")
+        }else if (playerChoice === computerChoice){
+            alert("You picked " + playerChoice + " and The Computer picked " + computerChoice + ". You Tied!")
+            ties++
+            alert(wins + " Wins!" + ties + " Ties!" + losses + " Losses")
+        }else {
+            alert("You picked " + playerChoice + " and The Computer picked " + computerChoice + ". You Lose!")
+            losses++
+            alert(wins + " Wins!" + ties + " Ties!" + losses + " Losses")
+        }
+
+    }else {
+        alert("Play by the rules!")
+    }
+}
+
+</script>
+
+</body>
+</html>
